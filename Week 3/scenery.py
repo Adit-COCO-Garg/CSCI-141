@@ -7,61 +7,63 @@ Draws a scenery
 """
 
 # Import modules/dependencies
-import turtle
+import turtle, math
 
 
-def draw_rec_poly(a, b, c):
+def draw_rec_poly(width, height, color):
     """
     pre-conditions:
     quadratic_roots:
     post-conditions: none
     """
     turtle.down()
-    turtle.color(c)
+    turtle.color(color)
     turtle.begin_fill()
-    turtle.forward(a)
+    turtle.forward(width)
     turtle.left(90)
-    turtle.forward(b)
+    turtle.forward(height)
     turtle.left(90)
-    turtle.forward(a)
+    turtle.forward(width)
     turtle.left(90)
-    turtle.forward(b)
+    turtle.forward(height)
     turtle.left(90)
     turtle.end_fill()
     turtle.up()
-    return a*b
+    return width*height
 
 
-def draw_house(a, b, c):
+def draw_house(width, height, angle, color):
     """
     pre-conditions:
     quadratic_roots:
     post-conditions: none
     """
-    draw_rec_poly(a, b, c)
-    if (b/a) >= 1:
-        draw_rec_poly(a, b, "Blue")  # Draw Windows
-        draw_rec_poly(a, b, "Blue")  # Draw Windows
-        draw_rec_poly(a, b, "Blue")  # Draw Windows
-        draw_rec_poly(a, b, "Blue")  # Draw Windows
+    draw_rec_poly(width, height, color)
+    if (height/width) >= 1:
+        draw_rec_poly(width, height, "Blue")  # Draw Windows
+        draw_rec_poly(width, height, "Blue")  # Draw Windows
+        draw_rec_poly(width, height, "Blue")  # Draw Windows
+        draw_rec_poly(width, height, "Blue")  # Draw Windows
     else:
-        draw_rec_poly(a, b, "Blue")  # Draw Windows
-        draw_rec_poly(a, b, "Blue")  # Draw Windows
-    draw_roof(a, b, c)
-    draw_rec_poly(a,b)
+        draw_rec_poly(width, height, "Blue")  # Draw Windows
+        draw_rec_poly(width, height, "Blue")  # Draw Windows
+    draw_roof(width, angle, color)
+    draw_rec_poly(width, height, color)  # Draw door
 
 
-def draw_roof(base,c):
+def draw_roof(base, angle, color):
+    turn_angle = (180-angle)/2
+    isosceles_teri_side = (base/2)/(math.degrees(math.cos(angle)))
     turtle.down()
-    turtle.color(c)
+    turtle.color(color)
     turtle.begin_fill()
-    turtle.forward(a)
-    turtle.left(120)
-    turtle.forward(a)
-    turtle.left(120)
-    turtle.forward(a)
-    turtle.left(120)
-    return 0.5*base*height
+    turtle.forward(base)
+    turtle.left(turn_angle)
+    turtle.forward(isosceles_teri_side)
+    turtle.left(angle)
+    turtle.forward(isosceles_teri_side)
+    turtle.left(turn_angle)
+    return 0.5*base*isosceles_teri_side*math.degrees(math.sin(turn_angle))
 
 
 def canvas_creat(sizeHouse):
@@ -71,8 +73,8 @@ def canvas_creat(sizeHouse):
     turtle.sety(-1.3*sizeHouse)
 
 
-
-
+def tester():
+    canvas_creat(100)
 
 
 
@@ -83,8 +85,7 @@ def main():
         program
     post-conditions: none
     """
-
-    # quadratic_roots(a, b, c) # Insert desired values
+    tester();
     turtle.done()
 
 
