@@ -5,7 +5,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-crayons.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-jeffs-keyboard.svg)](https://forthebadge.com)
 
-# Computer Science 👨‍💻 1 (CSCI-141) 
+# Computer Science 1 👨‍💻  (CSCI-141) 
 >This repo serves as a catalog 📒 of the work I did in CSCI-141. 
 
 Instructor: 😎 
