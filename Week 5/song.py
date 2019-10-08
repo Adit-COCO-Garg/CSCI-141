@@ -3,9 +3,10 @@ import turtle
 
 def square(color_parm):
     """
-
-    :param color_parm:
-    :return:
+    pre-conditions: 
+    :param color_parm: color_param a valid python turtle color.
+    square: Draws 10x10 square thats colored with the passed in color param
+    post-condition: draws a colored square with turtle ending where it started with pen up.
     """
     turtle.down()
     turtle.color(color_parm)
@@ -19,9 +20,10 @@ def square(color_parm):
 
 def paint_line(line):
     """
-
-    :param line:
-    :return:
+    pre-conditions: line should be a valid string 
+    :param line: line must be less then 80 characters to draw the lyrics visualiztion properly
+    paint_line: Draws each character in the lyric as a square with a color attributed to it
+    post-conditions: Turtle ends at the last square's start position with pen up
     """
     for char in line:
         if ord(char) < 70:
@@ -57,12 +59,10 @@ def picture(file_name):
 
 def sketch():
     """
-    pre-conditions: Constants are defined, turtle, random, and pi from math
-    is imported
+    pre-conditions: turtle is imported
     sketch: serves as a  container and initializer for the canvas and the
     the entire drawing
-    post conditions: turtle ends at the edge of the last raindrops last ripples
-    edge, and circumference is printed
+    post conditions: turtle is put at the very beginning of the drawing
     """
     turtle.setworldcoordinates(0, -800*1.2, 800*1.2, 0)
     turtle.hideturtle()
@@ -73,8 +73,9 @@ def sketch():
 
 def main():
     """
-
-    :return:
+    pre-conditions: turtle is imported, file_name - path must exist
+    main: The program asks user to input the filename for the lyrics in the program's directory (path must exist)
+    post conditions: the turtle is done drawing the visual representation for the lyrics.
     """
     file_name = input("Enter the song's file name!\nFile name: ")
     # turtle.speed(0)
