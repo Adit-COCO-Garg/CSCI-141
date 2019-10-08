@@ -62,6 +62,7 @@ def initialize():
     Set up the turtle world.
     :return: None
     """
+    turtle.reset()
     turtle.setup(WINDOW_SIZE, WINDOW_SIZE)
     turtle.setworldcoordinates(-MARGIN, -MARGIN, WORLD_SIZE, WORLD_SIZE)
 
@@ -73,7 +74,7 @@ def main():
     Stop when end of file is reached.
     :return: None
     """
-    file_path = input("Jertle File?")
+    file_path = input("Jertle File? ")
     file = open(file_path)
     interpreter(file)
     file.close()
@@ -87,10 +88,10 @@ def interpreter(file):
         while len(line) >= 2:
             if line[0] + line[1] == PENDOWN_CMD:
                 line = line[2:]
-                turtle.pendown()
+                turtle.down()
             elif line[0] + line[1] == PENUP_CMD:
                 line = line[2:]
-                turtle.penup()
+                turtle.up()
             elif line[0] + line[1] == TURN_CMD:
                 try:
                     value, line = line_parser(line)
@@ -117,6 +118,7 @@ def interpreter(file):
                     turtle.circle(value)
             else:
                 error("Unrecognized command string", ILLEGAL_COMMAND)
+        time.sleep(5)
 
 
 def line_parser(line):
