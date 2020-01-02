@@ -8,7 +8,7 @@
 # Computer Science 1 👨‍💻  (CSCI-141) 
 >This repo serves as a catalog 📒 of the work I did in CSCI-141. 
 
-Instructor: Robert St. Jacques 😎 <- One of the best teachers I have ever had. He's a god.
+Instructor: Robert St. Jacques 😎 <- One of the best teachers I have ever had. He's a god.  
 Grade: A
 
 ### 📌 Here's an Intro.
